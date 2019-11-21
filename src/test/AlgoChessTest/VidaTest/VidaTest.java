@@ -27,4 +27,5 @@ public class VidaTest {
         vida.recibiCuracion(2);
         Assert.assertFalse (vida.acabo());
     }
+
 }

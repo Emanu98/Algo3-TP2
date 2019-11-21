@@ -53,4 +53,21 @@ public class CatapultaTest {
         Assert.assertTrue(curandero.murio());
     }
 
+    @Test
+    public void sufreDanioLetalMurioDevuelveTrue () {
+        Equipo equipoMock = mock(Equipo.class);
+        Catapulta catapulta = new Catapulta (equipoMock);
+        catapulta.sufrirDanio(51);
+        Assert.assertTrue(catapulta.murio());
+    }
+
+    @Test
+    public void sufreDanioNoLetalMurioDevuelveFalse () {
+        Equipo equipoMock = mock(Equipo.class);
+        Catapulta catapulta = new Catapulta (equipoMock);
+        catapulta.sufrirDanio(48);
+        Assert.assertFalse (catapulta.murio());
+    }
+
+
 }

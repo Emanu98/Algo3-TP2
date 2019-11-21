@@ -15,6 +15,7 @@ public class ColeccionUnidades {
     public void agregarUnidad(Unidad unidad){
         unidades.add(unidad);
     }
+
     public boolean hayUnidadesAdyacentesA(Casillero unCasillero) throws CoordenadaFueraDeRangoExcepcion {
         for(int i = 0; i < unidades.size(); i++){
             if(unidades.get(i).esAdyacenteA(unCasillero)){ return true;}

@@ -19,4 +19,5 @@ public class Vida {
     public void recibiCuracion(int curacion) {
         valor += curacion;
     }
+
 }

@@ -33,6 +33,7 @@ public abstract class Unidad {
     public boolean esDelEquipo(Equipo unEquipo){
         return equipo.esIgualA(unEquipo);
     }
+
     public void recibirCuracion(int curacion) {
         vida.recibiCuracion(curacion);
     }

@@ -16,16 +16,33 @@ public class CuranderoTest {
     public void MatoUnSoldadoYLoCuroMurioDevuelveFalse() {
 
         Equipo equipoMock = mock(Equipo.class);
-        int i=0;
-        Soldado soldado1 = new Soldado (equipoMock );
-        Soldado soldado2 = new Soldado (equipoMock );
-        while (i<10) {
-        soldado1.atacar(soldado2);
-        i++;
+        int i = 0;
+        Soldado soldado1 = new Soldado(equipoMock);
+        Soldado soldado2 = new Soldado(equipoMock);
+        while (i < 10) {
+            soldado1.atacar(soldado2);
+            i++;
         }
-        Curandero curandero = new Curandero (equipoMock );
-        Assert.assertTrue (soldado2.murio());
+        Curandero curandero = new Curandero(equipoMock);
+        Assert.assertTrue(soldado2.murio());
         curandero.atacar(soldado2);
-        Assert.assertFalse (soldado2.murio());
+        Assert.assertFalse(soldado2.murio());
+    }
+
+
+    @Test
+    public void sufreDanioLetalMurioDevuelveTrue() {
+        Equipo equipoMock = mock(Equipo.class);
+        Curandero curandero = new Curandero(equipoMock);
+        curandero.sufrirDanio(77);
+        Assert.assertTrue(curandero.murio());
+    }
+
+    @Test
+    public void sufreDanioNoLetalMurioDevuelveFalse() {
+        Equipo equipoMock = mock(Equipo.class);
+        Curandero curandero = new Curandero(equipoMock);
+        curandero.sufrirDanio(74);
+        Assert.assertFalse(curandero.murio());
     }
 }

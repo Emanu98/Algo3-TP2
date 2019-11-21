@@ -51,4 +51,21 @@ public class JineteTest {
         }
         Assert.assertTrue(soldado.murio());
     }
+
+    @Test
+    public void sufreDanioLetalMurioDevuelveTrue () {
+        Equipo equipoMock = mock(Equipo.class);
+        Jinete jinete = new Jinete (equipoMock);
+        jinete.sufrirDanio(103);
+        Assert.assertTrue(jinete.murio());
+    }
+
+    @Test
+    public void sufreDanioNoLetalMurioDevuelveFalse () {
+        Equipo equipoMock = mock(Equipo.class);
+        Jinete jinete = new Jinete (equipoMock);
+        jinete.sufrirDanio(78);
+        Assert.assertFalse (jinete.murio());
+    }
+
 }

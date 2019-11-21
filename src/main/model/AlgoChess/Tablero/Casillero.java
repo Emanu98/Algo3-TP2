@@ -95,6 +95,7 @@ public class Casillero{
     public boolean esNegro(){
         return equipo.esNegro();
     }
+
     public void ocuparCasillero() throws CasilleroOcupadoExcepcion {
 
         if(!estaVacio){
